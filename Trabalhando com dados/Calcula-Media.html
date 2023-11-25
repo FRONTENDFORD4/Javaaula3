@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Média</title>
+    <script>
+        function calcularMedia() {
+            // Obter as notas do formulário
+            var nota1 = parseFloat(document.getElementById('nota1').value);
+            var nota2 = parseFloat(document.getElementById('nota2').value);
+            var nota3 = parseFloat(document.getElementById('nota3').value);
+            var nota4 = parseFloat(document.getElementById('nota4').value);
+
+            // Calcular a média
+            var media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            // Exibir a média
+            document.getElementById('resultado').innerHTML = 'Média: ' + media.toFixed(2);
+
+            // Verificar se a média é maior que 6 e exibir mensagem correspondente
+            if (media >= 6) {
+                document.getElementById('mensagem').innerHTML = 'Parabéns! Você está aprovado.';
+            } else {
+                document.getElementById('mensagem').innerHTML = 'Infelizmente, você está reprovado.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <form>
+        Nota 1: <input type="text" id="nota1"><br>
+        Nota 2: <input type="text" id="nota2"><br>
+        Nota 3: <input type="text" id="nota3"><br>
+        Nota 4: <input type="text" id="nota4"><br>
+        <button type="button" onclick="calcularMedia()">Calcular Média</button>
+    </form>
+    <div id="resultado"></div>
+    <div id="mensagem"></div>
+</body>
+</html>

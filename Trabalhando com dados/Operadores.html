@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade</title>
+    <script>
+        function calcularIdade() {
+            // Obter a data de nascimento do usuário
+            var dataNascimento = new Date(document.getElementById('dataNascimento').value);
+
+            // Obter a data atual
+            var dataAtual = new Date();
+
+            // Calcular a diferença em milissegundos entre as duas datas
+            var diferencaEmMilissegundos = dataAtual - dataNascimento;
+
+            // Calcular a diferença em segundos, minutos, horas, dias e meses
+            var segundos = diferencaEmMilissegundos / 1000;
+            var minutos = segundos / 60;
+            var horas = minutos / 60;
+            var dias = horas / 24;
+            var meses = dias / 30.44; // Aproximadamente a média de dias em um mês
+
+            // Exibir os resultados
+            document.getElementById('idadeMeses').textContent = Math.floor(meses);
+            document.getElementById('idadeDias').textContent = Math.floor(dias);
+            document.getElementById('idadeHoras').textContent = Math.floor(horas);
+            document.getElementById('idadeMinutos').textContent = Math.floor(minutos);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Idade</h1>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input type="date" id="dataNascimento">
+
+    <button onclick="calcularIdade()">Calcular Idade</button>
+
+    <h2>Idade em:</h2>
+    <p>Meses: <span id="idadeMeses"></span></p>
+    <p>Dias: <span id="idadeDias"></span></p>
+    <p>Horas: <span id="idadeHoras"></span></p>
+    <p>Minutos: <span id="idadeMinutos"></span></p>
+</body>
+</html>
