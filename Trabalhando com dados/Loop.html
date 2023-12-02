@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhe a Idade do Péricles</title>
+</head>
+<body>
+
+    <script>
+        // Pergunte ao usuário para adivinhar a idade
+        let idadePericles = Number(prompt("Qual é a idade do Péricles?"));
+
+        // Enquanto a idade for diferente de 54
+        while (idadePericles !== 54) {
+            // Condição se for verdadeira
+            alert("Errou! Tente novamente.");
+
+            // Operador ternário para dar dica ao usuário sobre a proximidade da idade correta
+            idadePericles < 54 ? 
+                alert("Péricles é mais velho.") :
+                alert("Péricles é mais novo.");
+
+            // Fazendo a pergunta novamente
+            idadePericles = Number(prompt("Qual é a idade do Péricles?"));
+        }
+
+        // Quando adivinhar corretamente
+        alert("Parabéns! Você acertou a idade de Péricles, que é 54 anos.");
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
